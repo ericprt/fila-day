@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How's Your Day</title>
+    <!-- style -->
+    <link rel="stylesheet" href="src/style.css" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="content">
+      <p>how's your day?</p>
+      <div class="btn-container">
+        <button class="btn" id="good-day-btn" onclick="remove(), inputValue()">pretty good</button>
+        <button class="btn" id="bad-day-btn" onclick="remove()">could be better</button>
+      </div>
+    </div>
+
+    <form name="fila-day" id="form" class="hidden">
+      <label for="about">tell me a little : </label>
+      <textarea name="about" id="reason" cols="30" rows="5" placeholder="ceritain dong..."></textarea>
+      <input name="herFeelings" type="text" id="feeling-value" class="hidden" value="not happy" />
+      <button type="submit" class="btn submit-btn">Submit</button>
+    </form>
+
+    <h2 id="thanks-text" class="hidden">terima kasih yaaa💖</h2>
+
+    <script src="src/script.js"></script>
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbwK69T60HunidtZNDxBYsXthTMXvk5qAc8lrZmUfoG19ayPVo3PaFwQuHJ20Hrq2Fw/exec";
+      const form = document.forms["fila-day"];
+      const textEl = document.getElementById("thanks-text");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        formEl.classList.add("hidden");
+        textEl.classList.remove("hidden");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>

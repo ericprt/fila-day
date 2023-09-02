@@ -13,7 +13,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 0 16px;
 }
 
 .content {
@@ -55,6 +54,8 @@ p {
 form {
   display: flex;
   flex-direction: column;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 label {

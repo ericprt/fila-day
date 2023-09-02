@@ -13,6 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 0 16px;
 }
 
 .content {
@@ -66,13 +67,19 @@ textarea {
   border-radius: 12px;
 }
 
+textarea:focus {
+  outline: 2px solid #bbafad;
+  border: none;
+}
+
 .submit-btn {
   align-self: center;
   width: 50%;
 }
 
-h2 {
-  color: #334155;
+img {
+  width: 184px;
+  border-radius: 13px;
 }
 
 .hidden {

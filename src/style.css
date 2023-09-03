@@ -63,6 +63,7 @@ label {
 }
 
 textarea {
+  color: #334155;
   padding: 6px;
   margin-bottom: 8px;
   border-radius: 12px;
@@ -85,4 +86,37 @@ img {
 
 .hidden {
   display: none;
+}
+
+@media (min-width: 1028px) {
+  p {
+    font-size: 80px;
+  }
+
+  .btn {
+    padding: 12px 32px;
+    font-size: 32px;
+    border-radius: 20px;
+  }
+
+  .btn-container {
+    width: 60%;
+    margin-top: 32px;
+  }
+
+  label {
+    font-size: 32px;
+  }
+
+  textarea {
+    width: 600px;
+    height: 320px;
+    font-size: 24px;
+    margin: 12px 0 24px 0;
+    padding: 12px;
+  }
+
+  img {
+    width: 400px;
+  }
 }

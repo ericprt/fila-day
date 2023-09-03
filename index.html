@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How's Your Day</title>
-    <!-- style -->
+
+    <!-- favicon -->
+    <link rel="icon" href="src/img/favicon.png" type="image/x-icon" />
+
+    <!-- css style -->
     <link rel="stylesheet" href="src/style.css" />
+
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
+
   <body>
+    <!-- asking section start -->
     <div class="content">
       <p>how's your day?</p>
       <div class="btn-container">
@@ -19,15 +26,20 @@
         <button class="btn" id="bad-day-btn" onclick="remove()">could be better</button>
       </div>
     </div>
+    <!-- asking section end -->
 
+    <!-- form section start -->
     <form name="fila-day" id="form" class="hidden">
       <label for="about">tell me a little : </label>
-      <textarea name="about" id="reason" cols="30" rows="5" placeholder="ceritain dong..."></textarea>
+      <textarea name="about" id="about" cols="30" rows="5" placeholder="ceritain dong..."></textarea>
       <input name="herFeelings" type="text" id="feeling-value" class="hidden" value="not happy" />
       <button type="submit" class="btn submit-btn">Submit</button>
     </form>
+    <!-- form section end -->
 
+    <!-- random image at the end -->
     <img id="img-shower" src="" alt="image" class="hidden" />
+
     <script src="src/script.js"></script>
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbwK69T60HunidtZNDxBYsXthTMXvk5qAc8lrZmUfoG19ayPVo3PaFwQuHJ20Hrq2Fw/exec";

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -72,6 +74,11 @@ textarea {
 textarea:focus {
   outline: 2px solid #bbafad;
   border: none;
+}
+
+textarea:invalid {
+  border: none;
+  outline: 2px solid rgb(210, 38, 38);
 }
 
 .submit-btn {

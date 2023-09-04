@@ -10,11 +10,6 @@
 
     <!-- css style -->
     <link rel="stylesheet" href="src/style.css" />
-
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
 
   <body>
@@ -31,7 +26,7 @@
     <!-- form section start -->
     <form name="fila-day" id="form" class="hidden">
       <label for="about">tell me a little : </label>
-      <textarea name="about" id="about" cols="30" rows="5" placeholder="ceritain dong..."></textarea>
+      <textarea name="about" id="about" cols="30" rows="5" placeholder="ceritain dong..." autofocus required minlength="5" oninvalid="this.setCustomValidity('dikit aja gpp kok!!!')" oninput="this.setCustomValidity('')"></textarea>
       <input name="herFeelings" type="text" id="feeling-value" class="hidden" value="not happy" />
       <button type="submit" class="btn submit-btn">Submit</button>
     </form>
@@ -41,24 +36,5 @@
     <img id="img-shower" src="" alt="image" class="hidden" />
 
     <script src="src/script.js"></script>
-    <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbwK69T60HunidtZNDxBYsXthTMXvk5qAc8lrZmUfoG19ayPVo3PaFwQuHJ20Hrq2Fw/exec";
-      const form = document.forms["fila-day"];
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        formEl.classList.add("hidden");
-        imgEl.classList.remove("hidden");
-
-        if (feelingInputEl.value === "happy") {
-          getRandomHappyImage();
-        } else {
-          getRandomSadImage();
-        }
-
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => console.log("Success!", response))
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
   </body>
 </html>

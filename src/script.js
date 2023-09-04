@@ -65,3 +65,21 @@ function getRandomSadImage() {
 
   imgEl.src = `src/img/${selectedImage}`;
 }
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbwK69T60HunidtZNDxBYsXthTMXvk5qAc8lrZmUfoG19ayPVo3PaFwQuHJ20Hrq2Fw/exec";
+const form = document.forms["fila-day"];
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  formEl.classList.add("hidden");
+  imgEl.classList.remove("hidden");
+
+  if (feelingInputEl.value === "happy") {
+    getRandomHappyImage();
+  } else {
+    getRandomSadImage();
+  }
+
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => console.log("Success!", response))
+    .catch((error) => console.error("Error!", error.message));
+});

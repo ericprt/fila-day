@@ -77,7 +77,7 @@ textarea:focus {
 
 textarea:invalid {
   border: none;
-  outline: 2px solid rgb(210, 38, 38);
+  outline: 2px solid #7f6864;
 }
 
 .submit-btn {
